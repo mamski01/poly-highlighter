@@ -63,7 +63,7 @@
           <button id="mode-move" class="btn toggle" title="Move mode (drag polygons)">Move</button>
 
           <button id="clear" class="btn" title="Clear current canvas (polygons in progress and unsaved set)">Clear</button>
-          <button id="save" class="btn primary" title="Save current set of polygons + background as a preset (S)">Save Preset</button>
+          <button id="save" class="btn primary" title="Save current set of polygons + background as a preset">Save Preset</button>
         </div>
         <div class="row">
           <label for="bgFile">Background</label>
@@ -71,7 +71,7 @@
           <button id="bgClear" class="btn" title="Remove background image">Remove BG</button>
         </div>
         <div class="row hint">
-          Hover to highlight polygons (tooltip shows name). Right‑click a completed polygon to delete it. Press <strong>S</strong> to save as preset. ESC cancels drawing.
+          Hover to highlight polygons (tooltip shows name). Right‑click a completed polygon to delete it. <kbd>ESC</kbd> cancels drawing.
         </div>
       </div>
 
@@ -325,7 +325,7 @@
 
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
-      if (e.key.toLowerCase() === 's') { e.preventDefault(); onSavePreset(); }
+      //if (e.key.toLowerCase() === 's') { e.preventDefault(); onSavePreset(); }
       if (e.key === 'Escape' && state.isDrawing) { state.isDrawing = false; state.currentPoints = []; render(); }
     });
 
